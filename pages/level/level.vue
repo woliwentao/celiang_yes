@@ -1,13 +1,13 @@
 <template>
-	<swiper :indicator-dots="true" :autoplay="false" :interval="3000" :duration="1000"
-	style="position:absolute;top:0upx;height:100%;width:100%;text-align: center;">
+	<swiper :indicator-dots="true" :autoplay="false" :interval="3000" :duration="500"
+	style="position:absolute;top:0upx;height:150%;width:100%;text-align: center;">
 	<view class="" style="position:absolute;left:350upx">
 			{{id}}测站
 	</view>
 		<swiper-item>
 			<view class="swiper-item">
 				<view class="content" style="position:absolute;top:0upx;height:100%;width:100%;">
-				<form style="position:absolute;top:100upx;height:100%;width:100%;">
+				<form style="position:absolute;top:100upx;height:100%;width:90%;">
 					<view class="cu-form-group margin-top">
 						<view class="title">左盘一目标读数：</view>
 						<input placeholder="度" name="input" @input="inputdegree" data-cur=0></input>
@@ -60,7 +60,7 @@
 		<swiper-item>
 			<view class="swiper-item">
 				<view class="content" style="position:absolute;top:0upx;height:100%;width:100%;">
-				<form style="position:absolute;top:0upx;height:100%;width:100%;">
+				<form style="position:absolute;top:0upx;height:100%;width:90%;">
 					<view class="cu-form-group margin-top">
 						<view class="title">左盘一目标读数：</view>
 						<input placeholder="度" name="input" @input="inputvvdegree" data-cur=0></input>
@@ -88,49 +88,49 @@
 				</form>
 				<view class="" style="position:absolute;top:500upx;width: 550upx;height:300upx">
 				<view class="cu-form-group margin-top" >
-					<view class="title">半测回角值1：</view>
+					<view class="title">一目标左半测回竖角：</view>
 					<text>{{vv1.degree}}</text>
 					<text>{{vv1.minute}}</text>
 					<text>{{vv1.second}}</text>
 				</view>
 				<view class="cu-form-group margin-top" >
-					<view class="title">半测回角值1：</view>
+					<view class="title">二目标左半测回竖角：</view>
 					<text>{{vv2.degree}}</text>
 					<text>{{vv2.minute}}</text>
 					<text>{{vv2.second}}</text>
 				</view>
 				<view class="cu-form-group margin-top" >
-					<view class="title">半测回角值1：</view>
+					<view class="title">一目标右半测回竖角：</view>
 					<text>{{vv3.degree}}</text>
 					<text>{{vv3.minute}}</text>
 					<text>{{vv3.second}}</text>
 				</view>
 				<view class="cu-form-group margin-top" >
-					<view class="title">半测回角值1：</view>
+					<view class="title">二目标右半测回竖角：</view>
 					<text>{{vv4.degree}}</text>
 					<text>{{vv4.minute}}</text>
 					<text>{{vv4.second}}</text>
 				</view>
 				<view class="cu-form-group margin-top" >
-					<view class="title">半测回角值1：</view>
+					<view class="title">一目标一测回竖角：</view>
 					<text>{{vv5.degree}}</text>
 					<text>{{vv5.minute}}</text>
 					<text>{{vv5.second}}</text>
 				</view>
 				<view class="cu-form-group margin-top" >
-					<view class="title">半测回角值1：</view>
+					<view class="title">二目标一测回竖角：：</view>
 					<text>{{vv6.degree}}</text>
 					<text>{{vv6.minute}}</text>
 					<text>{{vv6.second}}</text>
 				</view>
 				<view class="cu-form-group margin-top" >
-					<view class="title">半测回角值1：</view>
+					<view class="title">一目标竖盘指标差：</view>
 					<text>{{vv7.degree}}</text>
 					<text>{{vv7.minute}}</text>
 					<text>{{vv7.second}}</text>
 				</view>
 				<view class="cu-form-group margin-top" >
-					<view class="title">半测回角值1：</view>
+					<view class="title">二目标竖盘指标差：</view>
 					<text>{{vv8.degree}}</text>
 					<text>{{vv8.minute}}</text>
 					<text>{{vv8.second}}</text>
@@ -170,6 +170,9 @@
 				vv7:new this.angle(),
 				vv8:new this.angle(),
 			}
+		},
+		onUnload() {
+			
 		},
 		onLoad(option) {
 			this.id=option.id;
@@ -268,6 +271,8 @@
 	align-items: center;
 	min-height: 70upx;
 	justify-content: space-between;
+	box-shadow: 0rpx 0rpx 5upx;
+	border-radius: 20upx;
 }
 	.title {
 		font-size: 36upx;
